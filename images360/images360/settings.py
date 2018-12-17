@@ -95,3 +95,10 @@ MAX_PAGE = 50
 # MongoDB配置
 MONGO_URI = 'localhost'
 MONGO_DB = 'images360'
+
+# MySQL配置
+MYSQL_HOST = 'localhost'
+MYSQL_DATABASE = 'images360'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = '970202'
+MYSQL_PORT = 3306
