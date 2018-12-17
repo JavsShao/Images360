@@ -7,8 +7,15 @@
 
 import scrapy
 
+from scrapy import Item, Field
 
-class Images360Item(scrapy.Item):
+
+class ImageItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    collection = table = 'images'
+
+    id = Field()
+    url = Field()
+    title = Field()
+    thumb = Field()
