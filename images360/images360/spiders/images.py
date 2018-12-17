@@ -21,7 +21,7 @@ class ImagesSpider(scrapy.Spider):
             data['sn'] = page * 30
             params = urlencode(data)
             url = base_url + params
-            yield Request(url, self.parse())
+            yield Request(url, self.parse)
 
     def parse(self, response):
         pass
