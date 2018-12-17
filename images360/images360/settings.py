@@ -92,3 +92,5 @@ ROBOTSTXT_OBEY = True
 # 爬取最大页数
 MAX_PAGE = 50
 
+# 设置ROBOTSTXT_OBEY,否则无法抓取
+ROBOTSTXT_OBEY = False
