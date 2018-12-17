@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'images360.pipelines.Images360Pipeline': 300,
+    'images360.pipelines.ImagePipeline': 300,
     'images360.pipelines.MongoPipeline': 301,
     'images360.pipelines.MysqlPipeline': 302,
 }

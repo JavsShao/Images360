@@ -6,45 +6,30 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
 import pymysql
-
 from scrapy import Request
 from scrapy.exceptions import DropItem
 from scrapy.pipelines.images import ImagesPipeline
 
 
-class Images360Pipeline(object):
-    def process_item(self, item, spider):
-        return item
-
 class MongoPipeline(object):
-    def __init__(self, mongo_url, mongo_db):
-        '''
-        Mongodb数据库初始化
-        :param mongo_url: 地址
-        :param mongo_db: 数据库
-        '''
-        self.mongo_url = mongo_url
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
         self.mongo_db = mongo_db
 
     @classmethod
     def from_crawler(cls, crawler):
-        '''
-
-        :param crawler:
-        :return:
-        '''
         return cls(
-            mongo_url=crawler.settings.get('MONGO_URI'),
+            mongo_uri=crawler.settings.get('MONGO_URI'),
             mongo_db=crawler.settings.get('MONGO_DB')
         )
 
     def open_spider(self, spider):
-        self.client = pymongo.MongoClient(self.mongo_url)
+        self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
 
     def process_item(self, item, spider):
         name = item.collection
-        self.db[name].insert(dict[item])
+        self.db[name].insert(dict(item))
         return item
 
     def close_spider(self, spider):
