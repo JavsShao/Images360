@@ -102,3 +102,6 @@ MYSQL_DATABASE = 'images360'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = '970202'
 MYSQL_PORT = 3306
+
+# 存储文件的路径
+IMAGES_STORE = './images'
