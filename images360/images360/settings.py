@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'images360.spiders'
 #USER_AGENT = 'images360 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -91,6 +91,3 @@ ROBOTSTXT_OBEY = True
 
 # 爬取最大页数
 MAX_PAGE = 50
-
-# 设置ROBOTSTXT_OBEY,否则无法抓取
-ROBOTSTXT_OBEY = False
